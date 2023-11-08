@@ -10,7 +10,7 @@ int *vectorSolucion (int *v, int **matrix, int N, int M) {
         int i = N-1; int j = M;
 
         while(i > 0 && j > 0){
-                if( matrix[i][j] = 1 + matrix[i][j - v[i]] ){
+                if( matrix[i][j] == 1 + matrix[i][j - v[i]] ){
                         x[i] = x[i] + 1;
                         j = j - v[i];
                 }
@@ -18,6 +18,8 @@ int *vectorSolucion (int *v, int **matrix, int N, int M) {
                         i = i - 1;
                 }
         }
+
+	std::cout<<"El vector x es: x = ";
 
         for(int i = 0; i < N; i++){
                 std::cout<<x[i]<<" ";
@@ -77,7 +79,7 @@ int cambio (int N, int *v, int M) {
 	
 	int *x = vectorSolucion (v, matrix, N, M);
 
-	return matrix[N-1][M];
+	return matrix[N-1][M-1];
 }
 
 
